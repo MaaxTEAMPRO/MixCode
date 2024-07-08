@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Impede a rolagem horizontal */
+}
+
 body {
     font-family: 'Roboto', Arial, sans-serif;
     background-color: #1b1b1f;
@@ -15,7 +20,6 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    overflow-x: hidden;
 }
 
 header {
@@ -26,21 +30,19 @@ header {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 20px;
     width: 100%;
-    margin-bottom: 30px; /* Espaço entre o cabeçalho e a primeira caixa de texto */
+    margin-bottom: 30px;
 }
 
 .header-title {
     margin: 0;
-    font-size: 27px; /* Tamanho do texto reduzido */
+    font-size: 27px;
     color: #747edf;
-    /* Ajuste o tamanho do texto aqui */
 }
 
 .header-logo {
-    max-width: 160px; /* Tamanho da logo aumentado */
+    max-width: 160px;
     padding: 10px;
     margin-top: 10px;
-    /* Ajuste o tamanho da logo aqui */
 }
 
 main {
@@ -51,21 +53,34 @@ main {
     width: 100%;
 }
 
+.instruction {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
 .input-container {
     display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
     align-items: center;
+    margin-bottom: 15px;
     width: 100%;
+    justify-content: center;
 }
 
 input[type="text"], input[type="number"] {
     padding: 10px;
-    margin-bottom: 5px;
+    margin-right: 10px;
     border: none;
     border-radius: 5px;
     width: 80%;
     max-width: 300px;
+}
+
+input[type="number"] {
+    max-width: 70px;
+}
+
+.text-size-label {
+    margin-bottom: 10px;
 }
 
 button {
@@ -78,8 +93,7 @@ button {
     font-size: 1em;
     margin-top: 10px;
     transition: background-color 0.3s ease;
-    width: 80%;
-    max-width: 200px;
+    width: auto; /* Ajusta a largura automaticamente pelo conteúdo */
 }
 
 button:hover {
@@ -95,7 +109,7 @@ button:hover {
 }
 
 #generate-code {
-    margin-bottom: 30px; /* Espaço entre o botão e o código gerado */
+    margin-bottom: 30px;
 }
 
 .code-output, .text-output {
@@ -132,8 +146,8 @@ button:hover {
     width: 80%;
     max-width: 400px;
     text-align: center;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Animação */
-    opacity: 0; /* Iniciar oculto */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
 }
 
 .popup.show {
@@ -144,6 +158,23 @@ button:hover {
 .popup.hide {
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.9);
+}
+
+.popup label, .popup input[type="text"], .popup input[type="color"], .popup button {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+}
+
+.checkbox-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto;
+}
+
+.checkbox-container label {
+    margin: 0 10px 0 0;
 }
 
 .reset-btn {
@@ -176,7 +207,10 @@ button:hover {
     }
 
     button {
-        width: 100%;
-        max-width: 150px; /* Ajuste a largura dos botões em telas menores */
+        max-width: none;
+    }
+
+    .style-btn {
+        max-width: 50px;
     }
 }

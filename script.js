@@ -51,14 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
         popup.style.display = 'block';
 
         // Load the current color for the input
-        const currentColor = document.getElementById(`input${currentInputId}`).style.color;
-        if (currentColor) {
-            hexColorInput.value = rgbToHex(currentColor);
-            colorPickerInput.value = rgbToHex(currentColor);
-        } else {
-            hexColorInput.value = '#FFFFFF';
-            colorPickerInput.value = '#FFFFFF';
-        }
+        const inputElement = document.getElementById(`input${currentInputId}`);
+        const currentColor = inputElement.style.color || '#FFFFFF';
+        hexColorInput.value = rgbToHex(currentColor);
+        colorPickerInput.value = rgbToHex(currentColor);
     }
 
     function closePopup() {
@@ -101,12 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const input = document.getElementById(`input${i}`);
             if (input.value) {
                 const style = input.getAttribute('style');
-                if (style && style.includes('color')) {
-                    const colorMatch = style.match(/color:([^;]+);/);
-                    if (colorMatch) {
-                        code += `<color=${colorMatch[1]}>${input.value}</color>`;
-                        styledText += `<span style="${style}">${input.value}</span>`;
-                    }
+                const hexColor = localStorage.getItem(`input${i}-color`);
+                if (hexColor) {
+                    code += `<color=${hexColor}>${input.value}</color>`;
+                    styledText += `<span style="${style}">${input.value}</span>`;
                 } else {
                     code += input.value;
                     styledText += `<span style="${style}">${input.value}</span>`;
@@ -143,11 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Utility function to convert RGB to HEX
     function rgbToHex(rgb) {
-        let result;
-        if (rgb && rgb.startsWith('rgb')) {
-            const rgbValues = rgb.match(/\d+/g).map(Number);
-            result = `#${((1 << 24) + (rgbValues[0] << 16) + (rgbValues[1] << 8) + rgbValues[2]).toString(16).slice(1).toUpperCase()}`;
+        if (!rgb) return '#FFFFFF';
+        const rgbValues = rgb.match(/\d+/g);
+        if (rgbValues && rgbValues.length === 3) {
+            return `#${((1 << 24) + (parseInt(rgbValues[0]) << 16) + (parseInt(rgbValues[1]) << 8) + parseInt(rgbValues[2])).toString(16).slice(1).toUpperCase()}`;
         }
-        return result || '#FFFFFF';
+        return '#FFFFFF';
     }
 });

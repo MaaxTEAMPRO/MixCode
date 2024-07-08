@@ -12,29 +12,30 @@
         <img src="logo.png" alt="Logo" class="header-logo">
     </header>
     <main>
+        <p class="instruction">Adicione seus textos abaixo:</p>
         <div class="input-container">
             <input type="text" id="input1" placeholder="Texto 1">
-            <button class="style-btn" data-input="1">Estilizar</button>
+            <button class="style-btn" data-input="1">✏️</button>
         </div>
         <div class="input-container">
             <input type="text" id="input2" placeholder="Texto 2">
-            <button class="style-btn" data-input="2">Estilizar</button>
+            <button class="style-btn" data-input="2">✏️</button>
         </div>
         <div class="input-container">
             <input type="text" id="input3" placeholder="Texto 3">
-            <button class="style-btn" data-input="3">Estilizar</button>
+            <button class="style-btn" data-input="3">✏️</button>
         </div>
         <div class="input-container">
             <input type="text" id="input4" placeholder="Texto 4">
-            <button class="style-btn" data-input="4">Estilizar</button>
+            <button class="style-btn" data-input="4">✏️</button>
         </div>
         <div class="input-container">
             <input type="text" id="input5" placeholder="Texto 5">
-            <button class="style-btn" data-input="5">Estilizar</button>
+            <button class="style-btn" data-input="5">✏️</button>
         </div>
-        <p>Digite o tamanho do texto aqui:</p>
+        <p class="text-size-label">Digite o tamanho do texto aqui:</p>
         <div class="input-container">
-            <input type="number" id="textSize" placeholder="Tamanho do texto" min="1" max="300">
+            <input type="number" id="textSize" placeholder="0000" min="1" max="300">
         </div>
         <button id="generate-code">Gerar Código</button>
         <div class="input-container">
@@ -56,10 +57,14 @@
         <label for="colorInput">Cor (Hex ou Seletor):</label>
         <input type="text" id="hexColorInput" placeholder="#FFFFFF">
         <input type="color" id="colorPickerInput">
-        <label for="boldInput">Negrito:</label>
-        <input type="checkbox" id="boldInput">
-        <label for="italicInput">Itálico:</label>
-        <input type="checkbox" id="italicInput">
+        <div class="checkbox-container">
+            <label for="italicInput"><i>Itálico:</i></label>
+            <input type="checkbox" id="italicInput">
+        </div>
+        <div class="checkbox-container">
+            <label for="boldInput"><b>Negrito:</b></label>
+            <input type="checkbox" id="boldInput">
+        </div>
         <button id="apply-style">Aplicar</button>
         <button id="close-popup">Fechar</button>
     </div>
