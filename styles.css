@@ -73,6 +73,8 @@ input[type="text"], input[type="number"] {
     border-radius: 5px;
     width: 80%;
     max-width: 300px;
+    background-color: #46474b; /* Define a cor de fundo */
+    color: #ffffff; /* Define a cor do texto */
 }
 
 input[type="number"] {
@@ -101,7 +103,7 @@ button:hover {
 }
 
 #generate-code {
-    background-color: #747edf;
+    background-color: #40467c;
 }
 
 #generate-code:hover {
@@ -213,4 +215,13 @@ button:hover {
     .style-btn {
         max-width: 50px;
     }
+}
+
+.instruction-text a {
+    color: #f0f8ff; /* Cor de roxo claro */
+    text-decoration: none; /* Remove sublinhado padrão */
+}
+
+.instruction-text a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
