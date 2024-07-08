@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mixstyle</title>
+    <title>MixCode</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>mixstyle</h1>
+        <h1 class="header-title">#MixCode</h1>
+        <img src="logo.png" alt="Logo" class="header-logo">
     </header>
     <main>
         <div class="input-container">
@@ -44,7 +45,7 @@
         </div>
         <button id="copy-code">Copiar</button>
         <p class="instruction-text">
-            Digite seu texto nas caixas de texto conforme necessário, para cor única ou estilo único use apenas uma, ou para mais cores e estilos, use conforme necessário, clique no botão estilizar para adicionar seus estilos e cores do texto, abaixo adicione em número o tamanho do texto, entre 1 a 300, quando terminar as estilizações clique em gerar código e logo após clique em copiar, vá no jogo no limit até onde coloca os textos no vidro e cole o código, ajuste o número size conforme necessário (<size=23>)
+            Digite seu texto nas caixas de texto conforme necessário, para cor única ou estilo único use apenas uma, ou para mais cores e estilos, use conforme necessário, clique no botão estilizar para adicionar seus estilos e cores do texto, abaixo adicione em número o tamanho do texto, entre 1 a 300, quando terminar as estilizações clique em gerar código e logo após clique em copiar, vá no jogo no limit até onde coloca os textos no vidro e cole o código, ajuste o número size conforme necessário (< size=23 >)
         </p>
         <button id="reset-all" class="reset-btn">Resetar</button>
     </main>
@@ -52,8 +53,9 @@
     <div class="overlay" id="overlay"></div>
     <div class="popup" id="popup">
         <h2>Estilizar Texto</h2>
-        <label for="colorInput">Cor (Hex):</label>
-        <input type="color" id="colorInput">
+        <label for="colorInput">Cor (Hex ou Seletor):</label>
+        <input type="text" id="hexColorInput" placeholder="#FFFFFF">
+        <input type="color" id="colorPickerInput">
         <label for="boldInput">Negrito:</label>
         <input type="checkbox" id="boldInput">
         <label for="italicInput">Itálico:</label>

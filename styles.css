@@ -15,23 +15,32 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    overflow-x: hidden; /* Previna rolagem horizontal */
+    overflow-x: hidden;
 }
 
 header {
     background-color: #1b1b1f;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 20px;
     width: 100%;
+    margin-bottom: 30px; /* Espaço entre o cabeçalho e a primeira caixa de texto */
 }
 
-header h1 {
+.header-title {
     margin: 0;
-    font-size: 2em;
+    font-size: 27px; /* Tamanho do texto reduzido */
     color: #747edf;
+    /* Ajuste o tamanho do texto aqui */
+}
+
+.header-logo {
+    max-width: 160px; /* Tamanho da logo aumentado */
+    padding: 10px;
+    margin-top: 10px;
+    /* Ajuste o tamanho da logo aqui */
 }
 
 main {
@@ -69,12 +78,24 @@ button {
     font-size: 1em;
     margin-top: 10px;
     transition: background-color 0.3s ease;
-    width: 80%; /* Ajusta a largura dos botões */
-    max-width: 200px; /* Limite máximo para a largura dos botões */
+    width: 80%;
+    max-width: 200px;
 }
 
 button:hover {
     background-color: #747edf;
+}
+
+#generate-code {
+    background-color: #747edf;
+}
+
+#generate-code:hover {
+    background-color: #a2a6f2;
+}
+
+#generate-code {
+    margin-bottom: 30px; /* Espaço entre o botão e o código gerado */
 }
 
 .code-output, .text-output {
@@ -83,8 +104,8 @@ button:hover {
     border-radius: 10px;
     width: 80%;
     max-width: 500px;
-    word-wrap: break-word; /* Ajuste automático do texto */
-    white-space: pre-wrap; /* Mantém a formatação de espaço em branco e quebra de linha */
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .overlay {
@@ -111,6 +132,18 @@ button:hover {
     width: 80%;
     max-width: 400px;
     text-align: center;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Animação */
+    opacity: 0; /* Iniciar oculto */
+}
+
+.popup.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.popup.hide {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
 }
 
 .reset-btn {
@@ -144,6 +177,6 @@ button:hover {
 
     button {
         width: 100%;
-        max-width: 300px;
+        max-width: 150px; /* Ajuste a largura dos botões em telas menores */
     }
 }
