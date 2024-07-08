@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #1b1b1f;
+    color: #dfdfd6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow-x: hidden; /* Previna rolagem horizontal */
+}
+
+header {
+    background-color: #1b1b1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    width: 100%;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    color: #747edf;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    align-items: center;
+    width: 100%;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 300px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #40467c;
+    color: #dfdfd6;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    width: 80%; /* Ajusta a largura dos botões */
+    max-width: 200px; /* Limite máximo para a largura dos botões */
+}
+
+button:hover {
+    background-color: #747edf;
+}
+
+.code-output, .text-output {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    word-wrap: break-word; /* Ajuste automático do texto */
+    white-space: pre-wrap; /* Mantém a formatação de espaço em branco e quebra de linha */
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #202127;
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 1000;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.reset-btn {
+    background-color: #e74c3c;
+}
+
+.reset-btn:hover {
+    background-color: #c0392b;
+}
+
+.instruction-text {
+    margin-top: 20px;
+    color: #747edf;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #747edf;
+    border-radius: 5px;
+    background-color: #202127;
+    width: 80%;
+    max-width: 600px;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+    }
+
+    .input-container, .code-output, .text-output, .popup, .instruction-text {
+        width: 90%;
+    }
+
+    button {
+        width: 100%;
+        max-width: 300px;
+    }
+}

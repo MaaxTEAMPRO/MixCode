@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mixstyle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>mixstyle</h1>
+    </header>
+    <main>
+        <div class="input-container">
+            <input type="text" id="input1" placeholder="Texto 1">
+            <button class="style-btn" data-input="1">Estilizar</button>
+        </div>
+        <div class="input-container">
+            <input type="text" id="input2" placeholder="Texto 2">
+            <button class="style-btn" data-input="2">Estilizar</button>
+        </div>
+        <div class="input-container">
+            <input type="text" id="input3" placeholder="Texto 3">
+            <button class="style-btn" data-input="3">Estilizar</button>
+        </div>
+        <div class="input-container">
+            <input type="text" id="input4" placeholder="Texto 4">
+            <button class="style-btn" data-input="4">Estilizar</button>
+        </div>
+        <div class="input-container">
+            <input type="text" id="input5" placeholder="Texto 5">
+            <button class="style-btn" data-input="5">Estilizar</button>
+        </div>
+        <p>Digite o tamanho do texto aqui:</p>
+        <div class="input-container">
+            <input type="number" id="textSize" placeholder="Tamanho do texto" min="1" max="300">
+        </div>
+        <button id="generate-code">Gerar Código</button>
+        <div class="input-container">
+            <pre class="code-output" id="codeOutput"></pre>
+        </div>
+        <div class="input-container">
+            <pre class="text-output" id="textOutput"></pre>
+        </div>
+        <button id="copy-code">Copiar</button>
+        <p class="instruction-text">
+            Digite seu texto nas caixas de texto conforme necessário, para cor única ou estilo único use apenas uma, ou para mais cores e estilos, use conforme necessário, clique no botão estilizar para adicionar seus estilos e cores do texto, abaixo adicione em número o tamanho do texto, entre 1 a 300, quando terminar as estilizações clique em gerar código e logo após clique em copiar, vá no jogo no limit até onde coloca os textos no vidro e cole o código, ajuste o número size conforme necessário (<size=23>)
+        </p>
+        <button id="reset-all" class="reset-btn">Resetar</button>
+    </main>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="popup" id="popup">
+        <h2>Estilizar Texto</h2>
+        <label for="colorInput">Cor (Hex):</label>
+        <input type="color" id="colorInput">
+        <label for="boldInput">Negrito:</label>
+        <input type="checkbox" id="boldInput">
+        <label for="italicInput">Itálico:</label>
+        <input type="checkbox" id="italicInput">
+        <button id="apply-style">Aplicar</button>
+        <button id="close-popup">Fechar</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
