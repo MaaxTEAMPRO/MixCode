@@ -226,7 +226,6 @@ button:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
 
-/* Estilos para os presets */
 #presets-container {
     text-align: center;
     margin-top: 20px;
@@ -247,6 +246,12 @@ button:hover {
     color: #fff;
     width: 150px;
     text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.preset-block:hover {
+    background-color: #30303a;
 }
 
 .preset-block p {
