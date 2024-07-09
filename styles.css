@@ -256,4 +256,5 @@ button:hover {
 
 .preset-block p {
     margin-bottom: 10px;
+    color: inherit;
 }

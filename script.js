@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const textOutput = document.getElementById('textOutput');
     let currentInputId;
 
-    // Função para carregar os presets
     async function loadPresets() {
         try {
             const response = await fetch('codigos.txt');
@@ -18,23 +17,24 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             const data = await response.text();
             const presetsContainer = document.getElementById('presets');
-            presetsContainer.innerHTML = ''; // Limpa o contêiner antes de adicionar os presets
+            presetsContainer.innerHTML = '';
             const lines = data.split('\n');
 
             lines.forEach(line => {
                 const [name, code] = line.split(' - ');
+                const color = code.match(/color=([^>]+)>/)[1]; // Extrai a cor do código
                 const presetBlock = document.createElement('div');
                 presetBlock.classList.add('preset-block');
 
                 const presetTitle = document.createElement('p');
                 presetTitle.textContent = name;
+                presetTitle.style.color = color; // Aplica a cor extraída
                 presetBlock.appendChild(presetTitle);
 
                 const presetCode = document.createElement('pre');
                 presetCode.innerHTML = code;
                 presetBlock.appendChild(presetCode);
 
-                // Adiciona um listener para copiar o código ao clicar
                 presetBlock.addEventListener('click', () => {
                     copyToClipboard(code);
                 });
@@ -46,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Função para copiar texto para a área de transferência
     function copyToClipboard(text) {
         navigator.clipboard.writeText(text).then(() => {
             alert('Código copiado para a área de transferência!');
