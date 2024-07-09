@@ -11,25 +11,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Função para carregar os presets
     async function loadPresets() {
-        const response = await fetch('codigos.txt');
-        const data = await response.text();
-        const presetsContainer = document.getElementById('presets');
-        const lines = data.split('\n');
-        
-        lines.forEach(line => {
-            const [name, code] = line.split(' - ');
-            const presetBlock = document.createElement('div');
-            presetBlock.classList.add('preset-block');
-            
-            const presetTitle = document.createElement('p');
-            presetTitle.textContent = name;
-            presetBlock.appendChild(presetTitle);
-            
-            const presetCode = document.createElement('pre');
-            presetCode.innerHTML = code;
-            presetBlock.appendChild(presetCode);
-            
-            presetsContainer.appendChild(presetBlock);
+        try {
+            const response = await fetch('codigos.txt');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.text();
+            const presetsContainer = document.getElementById('presets');
+            presetsContainer.innerHTML = ''; // Limpa o contêiner antes de adicionar os presets
+            const lines = data.split('\n');
+
+            lines.forEach(line => {
+                const [name, code] = line.split(' - ');
+                const presetBlock = document.createElement('div');
+                presetBlock.classList.add('preset-block');
+
+                const presetTitle = document.createElement('p');
+                presetTitle.textContent = name;
+                presetBlock.appendChild(presetTitle);
+
+                const presetCode = document.createElement('pre');
+                presetCode.innerHTML = code;
+                presetBlock.appendChild(presetCode);
+
+                // Adiciona um listener para copiar o código ao clicar
+                presetBlock.addEventListener('click', () => {
+                    copyToClipboard(code);
+                });
+
+                presetsContainer.appendChild(presetBlock);
+            });
+        } catch (error) {
+            console.error('Failed to load presets:', error);
+        }
+    }
+
+    // Função para copiar texto para a área de transferência
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Código copiado para a área de transferência!');
+        }).catch(err => {
+            console.error('Failed to copy: ', err);
         });
     }
 
@@ -45,7 +67,9 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('apply-style').addEventListener('click', applyStyle);
     document.getElementById('close-popup').addEventListener('click', closePopup);
     document.getElementById('generate-code').addEventListener('click', generateCode);
-    document.getElementById('copy-code').addEventListener('click', copyCode);
+    document.getElementById('copy-code').addEventListener('click', () => {
+        copyToClipboard(codeOutput.textContent);
+    });
     document.getElementById('reset-all').addEventListener('click', resetAll);
 
     hexColorInput.addEventListener('input', () => {
@@ -123,12 +147,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('textSize', document.getElementById('textSize').value);
         codeOutput.textContent = code;
         textOutput.innerHTML = styledText;
-    }
-
-    function copyCode() {
-        navigator.clipboard.writeText(codeOutput.textContent).then(() => {
-            alert('Código copiado!');
-        });
     }
 
     function resetAll() {
