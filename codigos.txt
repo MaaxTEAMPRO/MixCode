@@ -1,9 +1,9 @@
-nome1 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
-nome2 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
-nome1 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
-nome2 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
-nome1 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
-nome2 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
+LISTA0470 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
+LISTA0470 (tras) - <size=80><i>LISTA<color=#990000>0470</color></i></size>
+LISTA0470 (tras) - <size=60><i>LISTA<color=#f57c00> 0470</color></i></size>
+TEAMPRO - <size=16><i>TEAM<color=#990000>PRO</color>RACING</i></size>
+#NUTALLO - <size=30><i><color=#FFFFFF>#</color><color=#9c44dc>NU</color><color=#FFFFFF>TALLO </color></i></size>
+#AbusadaMente - <size=70><i>#Abusada<color=#f57c00>mente</color></i></size>
 nome1 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
 nome2 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
 nome1 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
