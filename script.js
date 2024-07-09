@@ -22,17 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             lines.forEach(line => {
                 const [name, code] = line.split(' - ');
-                const color = code.match(/color=([^>]+)>/)[1]; // Extrai a cor do código
                 const presetBlock = document.createElement('div');
                 presetBlock.classList.add('preset-block');
 
                 const presetTitle = document.createElement('p');
                 presetTitle.textContent = name;
-                presetTitle.style.color = color; // Aplica a cor extraída
                 presetBlock.appendChild(presetTitle);
 
                 const presetCode = document.createElement('pre');
-                presetCode.innerHTML = code;
+                presetCode.innerHTML = parseCode(code); // Função para aplicar o estilo
                 presetBlock.appendChild(presetCode);
 
                 presetBlock.addEventListener('click', () => {
@@ -44,6 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             console.error('Failed to load presets:', error);
         }
+    }
+
+    function parseCode(code) {
+        return code.replace(/<color=([^>]+)>([^<]+)<\/color>/g, '<span style="color:$1;">$2</span>')
+                   .replace(/<size=([^>]+)>/g, '<span style="font-size:$1px;">')
+                   .replace(/<\/size>/g, '</span>')
+                   .replace(/<i>/g, '<i>')
+                   .replace(/<\/i>/g, '</i>');
     }
 
     function copyToClipboard(text) {
