@@ -225,3 +225,30 @@ button:hover {
 .instruction-text a:hover {
     text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
 }
+
+/* Estilos para os presets */
+#presets-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#presets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.preset-block {
+    border: 1px solid #747edf;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #202127;
+    color: #fff;
+    width: 150px;
+    text-align: center;
+}
+
+.preset-block p {
+    margin-bottom: 10px;
+}

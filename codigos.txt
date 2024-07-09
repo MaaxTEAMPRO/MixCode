@@ -1,0 +1,3 @@
+nome1 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
+nome2 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
+nome3 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>

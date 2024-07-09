@@ -9,19 +9,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const textOutput = document.getElementById('textOutput');
     let currentInputId;
 
-    // Load saved data from localStorage
-    for (let i = 1; i <= 5; i++) {
-        const savedText = localStorage.getItem(`input${i}`);
-        const savedHexColor = localStorage.getItem(`input${i}-color`);
-        if (savedText) {
-            document.getElementById(`input${i}`).value = savedText;
-            document.getElementById(`input${i}`).style.color = savedHexColor;
-        }
+    // Função para carregar os presets
+    async function loadPresets() {
+        const response = await fetch('codigos.txt');
+        const data = await response.text();
+        const presetsContainer = document.getElementById('presets');
+        const lines = data.split('\n');
+        
+        lines.forEach(line => {
+            const [name, code] = line.split(' - ');
+            const presetBlock = document.createElement('div');
+            presetBlock.classList.add('preset-block');
+            
+            const presetTitle = document.createElement('p');
+            presetTitle.textContent = name;
+            presetBlock.appendChild(presetTitle);
+            
+            const presetCode = document.createElement('pre');
+            presetCode.innerHTML = code;
+            presetBlock.appendChild(presetCode);
+            
+            presetsContainer.appendChild(presetBlock);
+        });
     }
-    const savedTextSize = localStorage.getItem('textSize');
-    if (savedTextSize) {
-        document.getElementById('textSize').value = savedTextSize;
-    }
+
+    loadPresets();
 
     document.querySelectorAll('.style-btn').forEach(button => {
         button.addEventListener('click', () => {
@@ -50,7 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
         popup.classList.add('show');
         popup.style.display = 'block';
 
-        // Load the current color for the input
         const inputElement = document.getElementById(`input${currentInputId}`);
         const currentColor = inputElement.style.color || '#FFFFFF';
         hexColorInput.value = rgbToHex(currentColor);
@@ -63,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         popup.classList.add('hide');
         setTimeout(() => {
             popup.style.display = 'none';
-        }, 300); // Duração da animação
+        }, 300);
     }
 
     function applyStyle() {
@@ -135,7 +146,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Utility function to convert RGB to HEX
     function rgbToHex(rgb) {
         if (!rgb) return '#FFFFFF';
         const rgbValues = rgb.match(/\d+/g);
