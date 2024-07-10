@@ -1,6 +1,6 @@
 LISTA0470 - <size=20><i>LISTA<color=#ff3131>0470</color></i></size>
 LISTA0470 - <size=20><i>LISTA<color=#f57c00> 0470</color></i></size>
-LISTA0470 - <size=20><i><color=#ee8b1d>▀▄▀▄▀▄▀</color><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color><color=#828788>▀▄▀▄▀▄▀</color></i></size>
+LISTA0470 - <size=20><i><color=#FFFFFF>▀▄▀▄▀▄▀</color><color=#FFFFFF>LISTA</color><color=#FF3131>0470</color><color=#FFFFFF>▀▄▀▄▀▄▀</color></i></size>
 TEAMPRO - <size=16><i>TEAM<color=#990000>PRO</color>RACING</i></size>
 #NUTALLO - <size=20><i><color=#FFFFFF>#</color><color=#9c44dc>NU</color><color=#FFFFFF>TALLO </color></i></size>
 #AbusadaMente - <size=15><i>#Abusada<color=#f57c00>mente</color></i></size>
