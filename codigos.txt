@@ -3,7 +3,7 @@ LISTA0470 - <size=20><i>LISTA<color=#f57c00> 0470</color></i></size>
 TEAMPRO - <size=16><i>TEAM<color=#990000>PRO</color>RACING</i></size>
 #NUTALLO - <size=20><i><color=#FFFFFF>#</color><color=#9c44dc>NU</color><color=#FFFFFF>TALLO </color></i></size>
 #AbusadaMente - <size=20><i>#Abusada<color=#f57c00>mente</color></i></size>
-nome1 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
+MX Racing - <size=20><i><color=#828788>MX</color><color=#FF6600>RACING</color>&#x1F3C1;</i></size>
 nome2 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
 nome1 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
 nome2 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
