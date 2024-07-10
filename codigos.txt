@@ -5,7 +5,7 @@ TEAMPRO - <size=16><i>TEAM<color=#990000>PRO</color>RACING</i></size>
 #AbusadaMente - <size=20><i>#Abusada<color=#f57c00>mente</color></i></size>
 MX Racing - <size=20><i><color=#828788>MX</color><color=#FF6600>RACING</color></i></size>
 K&N - <size=20><i><color=#f79325>K</color><color=#FFFFFF>&</color><color=#d80808>N</color></i></size>
-nome1 - <size=20><i><color=#f79325>🆃🅴🅰🅼</color><color=#ff0000>🅿🆁🅾</color></i></size>
+nome1 - <size=20><i><color=#FF6600>▀▄▀▄▀▄</color><color=#828788>TEAM</color><color=#FF6600>PRO</color><color=#828788>▀▄▀▄▀▄</color></i></size>
 nome2 - <size=20><i>▀▄▀▄▀▄</i></size>
 nome1 - <size=20><i>𝓣𝓔𝓐𝓜𝓟𝓡𝓞</i></size>
 nome2 - <size=20><i><color=#FFFFFF>LISTA</color><color=#ff3131>0470</color></i></size>
